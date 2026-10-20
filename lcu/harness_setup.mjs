@@ -5,6 +5,10 @@ import { dirname, isAbsolute, join, relative, resolve } from 'node:path';
 
 import { real } from './fsutil.mjs';
 import { checked, json, regularPath, seams, spacedJson } from './setup.mjs';
+import { createRequire } from 'module';
+
+var require = createRequire(import.meta.url);
+var module = { exports: {} };
 
 const MARKER = '.lcu-generated.json';
 
